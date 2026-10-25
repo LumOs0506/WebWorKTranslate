@@ -91,6 +91,7 @@ struct ContentView: View {
         Button(action: action) {
             Label(title, systemImage: icon).font(.system(size: 13))
                 .frame(maxWidth: .infinity, alignment: .leading).padding(12)
+                .contentShape(Rectangle())
         }.buttonStyle(.plain)
     }
     private func example(_ title: String, detail: String, source: String) -> some View {
@@ -102,7 +103,7 @@ struct ContentView: View {
                 }
                 Spacer()
                 Image(systemName: "arrow.up.right").font(.system(size: 10)).foregroundStyle(Palette.muted)
-            }.padding(.vertical, 11)
+            }.padding(.vertical, 11).contentShape(Rectangle())
         }.buttonStyle(.plain).help("Load example. Undo returns to your expression.")
     }
     private var header: some View {
@@ -180,6 +181,7 @@ struct ContentView: View {
                     Label(copied ? "Copied" : "Copy", systemImage: copied ? "checkmark" : "doc.on.doc")
                         .font(.system(size: 12, weight: .semibold)).padding(.horizontal, 16).padding(.vertical, 11)
                         .background(editor.output == nil ? Color.white.opacity(0.08) : Palette.accent, in: RoundedRectangle(cornerRadius: 8))
+                        .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain).foregroundStyle(.white).disabled(editor.output == nil)
                 .keyboardShortcut("c", modifiers: [.command, .shift]).accessibilityIdentifier("copyOutput")
@@ -218,6 +220,7 @@ struct ContentView: View {
                                     .frame(maxWidth: .infinity).padding(.vertical, 8)
                                     .background(category == item ? .white : .clear, in: RoundedRectangle(cornerRadius: 6))
                                     .foregroundStyle(category == item ? Palette.ink : Palette.muted)
+                                    .contentShape(Rectangle())
                             }.buttonStyle(.plain)
                         }
                     }.padding(3).background(Palette.sidebar, in: RoundedRectangle(cornerRadius: 8))
@@ -231,10 +234,16 @@ struct ContentView: View {
                         ForEach(["7", "8", "9", "⌫", "4", "5", "6", "÷", "1", "2", "3", "×", "0", ".", "−", "+"], id: \.self) { key in padKey(key) }
                     }
                     HStack(spacing: 7) {
-                        Button { editor.nextSlot(); mathFocused = true } label: { Label("Next slot", systemImage: "arrow.right.to.line") }
-                            .frame(maxWidth: .infinity).help("Tab: move to the next template slot")
-                        Button { editor.exitTemplate(); mathFocused = true } label: { Label("Exit", systemImage: "arrow.up.right") }
-                            .frame(maxWidth: .infinity).help("Escape: move outside the current template")
+                        Button { editor.nextSlot(); mathFocused = true } label: {
+                            Label("Next slot", systemImage: "arrow.right.to.line")
+                                .frame(maxWidth: .infinity, minHeight: 28)
+                                .contentShape(Rectangle())
+                        }.help("Tab: move to the next template slot")
+                        Button { editor.exitTemplate(); mathFocused = true } label: {
+                            Label("Exit", systemImage: "arrow.up.right")
+                                .frame(maxWidth: .infinity, minHeight: 28)
+                                .contentShape(Rectangle())
+                        }.help("Escape: move outside the current template")
                     }.font(.system(size: 11, weight: .medium)).buttonStyle(.borderless).padding(.top, 9)
                 }.frame(width: 244)
             }
@@ -264,6 +273,7 @@ struct ContentView: View {
                 .foregroundStyle(["+", "−", "×", "÷", "⌫"].contains(key) ? Palette.accent : Palette.ink)
                 .background(function ? Palette.sidebar.opacity(0.75) : .white, in: RoundedRectangle(cornerRadius: 8))
                 .overlay(RoundedRectangle(cornerRadius: 8).stroke(Palette.line.opacity(0.7), lineWidth: 0.7))
+                .contentShape(Rectangle())
         }.buttonStyle(.plain).accessibilityLabel(keyDescription(key)).help(keyDescription(key))
     }
     private func keyDescription(_ key: String) -> String {
@@ -375,6 +385,7 @@ struct ContentView: View {
                                         Text(entry.output).font(.system(size: 14, design: .monospaced)).lineLimit(3)
                                         Text(entry.date, format: .dateTime.month().day().hour().minute()).font(.system(size: 10)).foregroundStyle(Palette.muted)
                                     }.frame(maxWidth: .infinity, alignment: .leading)
+                                        .contentShape(Rectangle())
                                 }.buttonStyle(.plain)
                                 Button { editor.deleteHistory(entry.id) } label: { Image(systemName: "trash") }.buttonStyle(.borderless).help("Remove saved expression")
                             }.padding(16).background(.white, in: RoundedRectangle(cornerRadius: 10))
