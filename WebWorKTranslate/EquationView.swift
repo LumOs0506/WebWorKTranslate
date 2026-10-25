@@ -1,5 +1,22 @@
 import SwiftUI
 
+/// Use ordinary digits in a lowered run so both digits share the same font
+/// metrics, rather than relying on separately drawn Unicode subscript glyphs.
+struct BaseTenLogLabel: View {
+    let size: CGFloat
+
+    var body: some View {
+        HStack(alignment: .firstTextBaseline, spacing: 0) {
+            Text("log").font(.system(size: size, design: .serif))
+            Text("10").font(.system(size: size * 0.65, design: .serif))
+                .baselineOffset(-size * 0.22)
+        }
+        .fixedSize()
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("log base 10")
+    }
+}
+
 struct EquationRowView: View {
     let row: MathRow
     let cursor: MathCursor?
@@ -91,7 +108,11 @@ struct EquationNodeView: View {
                 HStack(spacing: 0) { symbol("|"); child(0, label: "Absolute value"); symbol("|") }
             case .function:
                 HStack(spacing: 0) {
-                    Text(node.text == "log10" ? "log₁₀" : node.text).font(.system(size: size * 0.86, design: .serif))
+                    if node.text == "log10" {
+                        BaseTenLogLabel(size: size * 0.86)
+                    } else {
+                        Text(node.text).font(.system(size: size * 0.86, design: .serif))
+                    }
                     symbol("(")
                     ForEach(node.children.indices, id: \.self) { index in
                         if index > 0 { symbol(",") }

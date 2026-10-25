@@ -138,6 +138,9 @@ struct ContentView: View {
             }
             .focusable().focusEffectDisabled().focused($mathFocused)
             .onKeyPress(phases: .down) { press in handleKey(press) }
+            // macOS routes the physical Delete key through the responder's
+            // delete command instead of delivering it as an ordinary key press.
+            .onDeleteCommand { editor.backspace() }
             .accessibilityIdentifier("expressionEditor")
             HStack(spacing: 5) {
                 Image(systemName: "cursorarrow.click").font(.system(size: 10))
@@ -250,7 +253,13 @@ struct ContentView: View {
     }
     private func padKey(_ key: String, function: Bool = false) -> some View {
         Button { activate(key); mathFocused = true } label: {
-            Text(key).font(.system(size: function ? 17 : 20, weight: .regular, design: function ? .serif : .rounded))
+            Group {
+                if key == "log₁₀" {
+                    BaseTenLogLabel(size: 17)
+                } else {
+                    Text(key).font(.system(size: function ? 17 : 20, weight: .regular, design: function ? .serif : .rounded))
+                }
+            }
                 .frame(maxWidth: .infinity).frame(height: 44)
                 .foregroundStyle(["+", "−", "×", "÷", "⌫"].contains(key) ? Palette.accent : Palette.ink)
                 .background(function ? Palette.sidebar.opacity(0.75) : .white, in: RoundedRectangle(cornerRadius: 8))

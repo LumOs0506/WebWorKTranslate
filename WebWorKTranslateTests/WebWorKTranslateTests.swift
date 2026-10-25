@@ -67,6 +67,24 @@ struct WebWorKTranslateTests {
         let log = MathNode(kind: .logBase, children: [MathRow(text: "2"), MathRow(text: "x")])
         #expect(try parse(MathRow(nodes: [log]).translate().output) == parse("ln(x)/ln(2)"))
     }
+    @Test func baseTwoLogPreservesTheEnteredArgument() throws {
+        let editor = MathEditor(defaults: nil)
+        editor.insertTemplate(.logBase)
+        editor.insertText("2")
+        editor.nextSlot()
+        editor.insertText("3")
+        #expect(editor.output == "ln(3)/ln(2)")
+
+        editor.insertText("x")
+        #expect(editor.output == "ln((3*x))/ln(2)")
+        editor.backspace()
+        #expect(editor.output == "ln(3)/ln(2)")
+
+        editor.undo()
+        #expect(editor.output == "ln((3*x))/ln(2)")
+        editor.redo()
+        #expect(editor.output == "ln(3)/ln(2)")
+    }
     @Test func functionsNextToVariablesMultiply() throws {
         let editor = MathEditor(defaults: nil)
         editor.insertText("x")
