@@ -1,0 +1,549 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 110;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		9F05E36F308D9C8400F0F3ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F05E357308D9C8300F0F3ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F05E35E308D9C8300F0F3ED;
+			remoteInfo = WebWorKTranslate;
+		};
+		9F05E379308D9C8400F0F3ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F05E357308D9C8300F0F3ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F05E35E308D9C8300F0F3ED;
+			remoteInfo = WebWorKTranslate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9F05E35F308D9C8300F0F3ED /* WebWorKTranslate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebWorKTranslate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F05E36E308D9C8400F0F3ED /* WebWorKTranslateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebWorKTranslateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F05E378308D9C8400F0F3ED /* WebWorKTranslateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebWorKTranslateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		9F05E361308D9C8300F0F3ED /* WebWorKTranslate */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WebWorKTranslate;
+			sourceTree = "<group>";
+		};
+		9F05E371308D9C8400F0F3ED /* WebWorKTranslateTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WebWorKTranslateTests;
+			sourceTree = "<group>";
+		};
+		9F05E37B308D9C8400F0F3ED /* WebWorKTranslateUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WebWorKTranslateUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F05E35C308D9C8300F0F3ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		9F05E36B308D9C8400F0F3ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		9F05E375308D9C8400F0F3ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9F05E356308D9C8300F0F3ED = {
+			isa = PBXGroup;
+			children = (
+				9F05E361308D9C8300F0F3ED /* WebWorKTranslate */,
+				9F05E371308D9C8400F0F3ED /* WebWorKTranslateTests */,
+				9F05E37B308D9C8400F0F3ED /* WebWorKTranslateUITests */,
+				9F05E360308D9C8300F0F3ED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9F05E360308D9C8300F0F3ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F05E35F308D9C8300F0F3ED /* WebWorKTranslate.app */,
+				9F05E36E308D9C8400F0F3ED /* WebWorKTranslateTests.xctest */,
+				9F05E378308D9C8400F0F3ED /* WebWorKTranslateUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F05E35E308D9C8300F0F3ED /* WebWorKTranslate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F05E380308D9C8400F0F3ED /* Build configuration list for PBXNativeTarget "WebWorKTranslate" */;
+			buildPhases = (
+				9F05E35B308D9C8300F0F3ED /* Sources */,
+				9F05E35C308D9C8300F0F3ED /* Frameworks */,
+				9F05E35D308D9C8300F0F3ED /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				9F05E361308D9C8300F0F3ED /* WebWorKTranslate */,
+			);
+			name = WebWorKTranslate;
+			productName = WebWorKTranslate;
+			productReference = 9F05E35F308D9C8300F0F3ED /* WebWorKTranslate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9F05E36D308D9C8400F0F3ED /* WebWorKTranslateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F05E383308D9C8400F0F3ED /* Build configuration list for PBXNativeTarget "WebWorKTranslateTests" */;
+			buildPhases = (
+				9F05E36A308D9C8400F0F3ED /* Sources */,
+				9F05E36B308D9C8400F0F3ED /* Frameworks */,
+				9F05E36C308D9C8400F0F3ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F05E370308D9C8400F0F3ED /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				9F05E371308D9C8400F0F3ED /* WebWorKTranslateTests */,
+			);
+			name = WebWorKTranslateTests;
+			productName = WebWorKTranslateTests;
+			productReference = 9F05E36E308D9C8400F0F3ED /* WebWorKTranslateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9F05E377308D9C8400F0F3ED /* WebWorKTranslateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F05E386308D9C8400F0F3ED /* Build configuration list for PBXNativeTarget "WebWorKTranslateUITests" */;
+			buildPhases = (
+				9F05E374308D9C8400F0F3ED /* Sources */,
+				9F05E375308D9C8400F0F3ED /* Frameworks */,
+				9F05E376308D9C8400F0F3ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F05E37A308D9C8400F0F3ED /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				9F05E37B308D9C8400F0F3ED /* WebWorKTranslateUITests */,
+			);
+			name = WebWorKTranslateUITests;
+			productName = WebWorKTranslateUITests;
+			productReference = 9F05E378308D9C8400F0F3ED /* WebWorKTranslateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9F05E357308D9C8300F0F3ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2710;
+				LastUpgradeCheck = 2710;
+				TargetAttributes = {
+					9F05E35E308D9C8300F0F3ED = {
+						CreatedOnToolsVersion = 27.1;
+					};
+					9F05E36D308D9C8400F0F3ED = {
+						CreatedOnToolsVersion = 27.1;
+						TestTargetID = 9F05E35E308D9C8300F0F3ED;
+					};
+					9F05E377308D9C8400F0F3ED = {
+						CreatedOnToolsVersion = 27.1;
+						TestTargetID = 9F05E35E308D9C8300F0F3ED;
+					};
+				};
+			};
+			buildConfigurationList = 9F05E35A308D9C8300F0F3ED /* Build configuration list for PBXProject "WebWorKTranslate" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9F05E356308D9C8300F0F3ED;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 9F05E360308D9C8300F0F3ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F05E35E308D9C8300F0F3ED /* WebWorKTranslate */,
+				9F05E36D308D9C8400F0F3ED /* WebWorKTranslateTests */,
+				9F05E377308D9C8400F0F3ED /* WebWorKTranslateUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9F05E35D308D9C8300F0F3ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		9F05E36C308D9C8400F0F3ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		9F05E376308D9C8400F0F3ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F05E35B308D9C8300F0F3ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		9F05E36A308D9C8400F0F3ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		9F05E374308D9C8400F0F3ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9F05E370308D9C8400F0F3ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F05E35E308D9C8300F0F3ED /* WebWorKTranslate */;
+			targetProxy = 9F05E36F308D9C8400F0F3ED /* PBXContainerItemProxy */;
+		};
+		9F05E37A308D9C8400F0F3ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F05E35E308D9C8300F0F3ED /* WebWorKTranslate */;
+			targetProxy = 9F05E379308D9C8400F0F3ED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9F05E37E308D9C8400F0F3ED /* Debug configuration for PBXProject "WebWorKTranslate" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = M8AX6VLJHG;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 27.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9F05E37F308D9C8400F0F3ED /* Release configuration for PBXProject "WebWorKTranslate" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = M8AX6VLJHG;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 27.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		9F05E381308D9C8400F0F3ED /* Debug configuration for PBXNativeTarget "WebWorKTranslate" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M8AX6VLJHG;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = LumOs.WebWorKTranslate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9F05E382308D9C8400F0F3ED /* Release configuration for PBXNativeTarget "WebWorKTranslate" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M8AX6VLJHG;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = LumOs.WebWorKTranslate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		9F05E384308D9C8400F0F3ED /* Debug configuration for PBXNativeTarget "WebWorKTranslateTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M8AX6VLJHG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = LumOs.WebWorKTranslateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebWorKTranslate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WebWorKTranslate";
+			};
+			name = Debug;
+		};
+		9F05E385308D9C8400F0F3ED /* Release configuration for PBXNativeTarget "WebWorKTranslateTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M8AX6VLJHG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = LumOs.WebWorKTranslateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebWorKTranslate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WebWorKTranslate";
+			};
+			name = Release;
+		};
+		9F05E387308D9C8400F0F3ED /* Debug configuration for PBXNativeTarget "WebWorKTranslateUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M8AX6VLJHG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = LumOs.WebWorKTranslateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = WebWorKTranslate;
+			};
+			name = Debug;
+		};
+		9F05E388308D9C8400F0F3ED /* Release configuration for PBXNativeTarget "WebWorKTranslateUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M8AX6VLJHG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = LumOs.WebWorKTranslateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = WebWorKTranslate;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F05E35A308D9C8300F0F3ED /* Build configuration list for PBXProject "WebWorKTranslate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F05E37E308D9C8400F0F3ED /* Debug configuration for PBXProject "WebWorKTranslate" */,
+				9F05E37F308D9C8400F0F3ED /* Release configuration for PBXProject "WebWorKTranslate" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		9F05E380308D9C8400F0F3ED /* Build configuration list for PBXNativeTarget "WebWorKTranslate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F05E381308D9C8400F0F3ED /* Debug configuration for PBXNativeTarget "WebWorKTranslate" */,
+				9F05E382308D9C8400F0F3ED /* Release configuration for PBXNativeTarget "WebWorKTranslate" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		9F05E383308D9C8400F0F3ED /* Build configuration list for PBXNativeTarget "WebWorKTranslateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F05E384308D9C8400F0F3ED /* Debug configuration for PBXNativeTarget "WebWorKTranslateTests" */,
+				9F05E385308D9C8400F0F3ED /* Release configuration for PBXNativeTarget "WebWorKTranslateTests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		9F05E386308D9C8400F0F3ED /* Build configuration list for PBXNativeTarget "WebWorKTranslateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F05E387308D9C8400F0F3ED /* Debug configuration for PBXNativeTarget "WebWorKTranslateUITests" */,
+				9F05E388308D9C8400F0F3ED /* Release configuration for PBXNativeTarget "WebWorKTranslateUITests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9F05E357308D9C8300F0F3ED /* Project object */;
+	validationLevel = 1;
+}
