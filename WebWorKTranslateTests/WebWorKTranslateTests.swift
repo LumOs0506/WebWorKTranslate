@@ -143,6 +143,24 @@ struct WebWorKTranslateTests {
         #expect(try parse("C(5,2)").warnings.count == 1)
         #expect(try parse("log10(x)").warnings.isEmpty)
     }
+    @Test func historyRetainsCompletedWorkAndReopensWithoutDuplicates() throws {
+        let editor = MathEditor(defaults: nil)
+        editor.load("ln(3)/ln(2)")
+        let original = editor.document
+        editor.clear()
+        #expect(editor.history.map(\.output) == ["ln(3)/ln(2)"])
+        editor.insertText("x+")
+        editor.clear()
+        #expect(editor.history.count == 1)
+        editor.load("sqrt(2)")
+        editor.replace(original)
+        #expect(editor.history.map(\.output) == ["sqrt(2)", "ln(3)/ln(2)"])
+        #expect(editor.output == "ln(3)/ln(2)")
+        editor.recordTranslation()
+        #expect(editor.history.map(\.output) == ["ln(3)/ln(2)", "sqrt(2)"])
+        editor.recordTranslation()
+        #expect(editor.history.count == 2)
+    }
     @Test func typedFunctionPowerMatchesThePad() throws {
         let editor = MathEditor(defaults: nil)
         editor.insertText("sin")

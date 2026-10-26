@@ -64,6 +64,7 @@ final class MathEditor {
         document = state.document; cursor = state.cursor; notice = nil; persist()
     }
     func clear() {
+        recordTranslation()
         checkpoint(); document = MathRow(); cursor = MathCursor(row: document.id, offset: 0); persist()
     }
     func insertText(_ text: String) {
@@ -185,14 +186,24 @@ final class MathEditor {
         } catch { notice = error.localizedDescription; return false }
     }
     func replace(_ row: MathRow) {
+        recordTranslation()
         checkpoint(); document = row; cursor = MathCursor(row: row.id, offset: row.nodes.count); persist()
     }
     func save() {
+        guard output != nil else { return }
+        recordTranslation()
+        notice = "Saved to your translation history."
+    }
+    /// Record completed work at a deliberate action, not on every keystroke.
+    func recordTranslation() {
         guard let output else { return }
-        if history.first?.output != output { history.insert(SavedExpression(document: document, output: output), at: 0) }
+        var entry = history.first(where: { $0.output == output }) ?? SavedExpression(document: document, output: output)
+        entry.document = document
+        entry.date = Date()
+        history.removeAll { $0.output == output }
+        history.insert(entry, at: 0)
         history = Array(history.prefix(20))
         persistHistory()
-        notice = "Saved to your recent expressions."
     }
     func deleteHistory(_ id: UUID) { history.removeAll { $0.id == id }; persistHistory() }
     private func persistHistory() {

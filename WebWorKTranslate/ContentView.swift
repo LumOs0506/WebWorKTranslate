@@ -15,7 +15,6 @@ struct ContentView: View {
     @State private var editor = MathEditor()
     @State private var category = "Algebra"
     @State private var showingGuide = false
-    @State private var showingHistory = false
     @State private var copied = false
     @FocusState private var mathFocused: Bool
     private let categories = ["Algebra", "Trig", "Functions", "Variables"]
@@ -42,7 +41,6 @@ struct ContentView: View {
         .tint(Palette.accent)
         .preferredColorScheme(.light)
         .sheet(isPresented: $showingGuide) { guide }
-        .sheet(isPresented: $showingHistory) { recent }
         .onChange(of: editor.document) { copied = false }
         .onAppear { mathFocused = true }
     }
@@ -58,30 +56,42 @@ struct ContentView: View {
                     Text("TRANSLATE").font(.system(size: 9, weight: .semibold)).tracking(2.5)
                 }
             }.padding(.bottom, 36)
-            Text("YOUR WORKSPACE").font(.system(size: 9, weight: .bold)).tracking(1.6).foregroundStyle(Palette.muted)
-                .padding(.bottom, 14)
-            Label("Expression pad", systemImage: "square.and.pencil")
-                .font(.system(size: 13, weight: .semibold))
-                .frame(maxWidth: .infinity, alignment: .leading).padding(12)
-                .foregroundStyle(Palette.accent)
-                .background(Palette.accent.opacity(0.08), in: RoundedRectangle(cornerRadius: 8))
-            sidebarButton("Recent expressions", icon: "clock") { showingHistory = true }
-            sidebarButton("Syntax guide", icon: "book.closed") { showingGuide = true }
-            Rectangle().fill(Palette.line).frame(height: 1).padding(.vertical, 24)
-            Text("TRY AN EXAMPLE").font(.system(size: 9, weight: .bold)).tracking(1.6).foregroundStyle(Palette.muted)
-                .padding(.bottom, 14)
-            example("A fraction", detail: "Grouping made clear", source: "(x+1)/(x-2)")
-            example("Roots & powers", detail: "A little more structure", source: "sqrt(x^2+1)")
-            example("Trigonometry", detail: "Functions in radians", source: "sin(pi/4)^2")
-            example("Logarithms", detail: "An explicit base", source: "log10(100)+ln(x)")
-            Spacer(minLength: 30)
-            VStack(alignment: .leading, spacing: 8) {
-                Image(systemName: "pencil.and.outline").font(.system(size: 21)).foregroundStyle(Palette.accent)
-                Text("Think in math.\nPaste in WebWorK.")
-                    .font(.system(size: 18, weight: .medium, design: .serif)).lineSpacing(3)
-                Text("Your expressions stay on this Mac.")
-                    .font(.system(size: 11)).foregroundStyle(Palette.muted).lineSpacing(3)
+            Button { editor.clear(); mathFocused = true } label: {
+                Label("New expression", systemImage: "plus")
+                    .font(.system(size: 13, weight: .semibold))
+                    .frame(maxWidth: .infinity, alignment: .leading).padding(12)
+                    .background(.white.opacity(0.7), in: RoundedRectangle(cornerRadius: 8))
+                    .contentShape(Rectangle())
+            }.buttonStyle(.plain)
+            HStack {
+                Text("TRANSLATION HISTORY").tracking(1)
+                Spacer()
+                Text("\(editor.history.count)").monospacedDigit()
             }
+            .font(.system(size: 9, weight: .bold)).foregroundStyle(Palette.muted)
+            .padding(.top, 24).padding(.bottom, 14)
+            if editor.history.isEmpty {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Your history starts here.")
+                        .font(.system(size: 12, weight: .medium))
+                    Text("Translations are kept when you copy, save, or start a new expression.")
+                        .font(.system(size: 11)).foregroundStyle(Palette.muted).lineSpacing(3)
+                }.padding(.vertical, 12)
+                Spacer(minLength: 16)
+            } else {
+                ScrollView {
+                    LazyVStack(spacing: 8) {
+                        ForEach(editor.history) { entry in historyRow(entry) }
+                    }
+                }
+                .frame(maxHeight: .infinity)
+            }
+            Rectangle().fill(Palette.line).frame(height: 1).padding(.top, 16).padding(.bottom, 8)
+            sidebarButton("Syntax guide", icon: "book.closed") { showingGuide = true }
+            Text("Last 20 translations · Stored on this Mac")
+                .font(.system(size: 10)).foregroundStyle(Palette.muted)
+                .lineSpacing(3).padding(.top, 8)
+
         }
         .padding(22).frame(width: 224).frame(maxHeight: .infinity)
         .background(Palette.sidebar)
@@ -94,17 +104,27 @@ struct ContentView: View {
                 .contentShape(Rectangle())
         }.buttonStyle(.plain)
     }
-    private func example(_ title: String, detail: String, source: String) -> some View {
-        Button { editor.load(source); mathFocused = true } label: {
-            HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(title).font(.system(size: 12, weight: .semibold))
-                    Text(detail).font(.system(size: 10)).foregroundStyle(Palette.muted)
-                }
-                Spacer()
-                Image(systemName: "arrow.up.right").font(.system(size: 10)).foregroundStyle(Palette.muted)
-            }.padding(.vertical, 11).contentShape(Rectangle())
-        }.buttonStyle(.plain).help("Load example. Undo returns to your expression.")
+    private func historyRow(_ entry: SavedExpression) -> some View {
+        Button {
+            editor.replace(entry.document)
+            mathFocused = true
+        } label: {
+            VStack(alignment: .leading, spacing: 8) {
+                Text(entry.output)
+                    .font(.system(size: 12, design: .monospaced))
+                    .lineLimit(3).multilineTextAlignment(.leading)
+                Text(entry.date, format: .dateTime.month().day().hour().minute())
+                    .font(.system(size: 9)).foregroundStyle(Palette.muted)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading).padding(12)
+            .background(.white.opacity(0.65), in: RoundedRectangle(cornerRadius: 8))
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .help("Reopen: \(entry.output)")
+        .contextMenu {
+            Button("Remove from history", role: .destructive) { editor.deleteHistory(entry.id) }
+        }
     }
     private var header: some View {
         HStack(alignment: .top) {
@@ -331,6 +351,7 @@ struct ContentView: View {
         guard let output = editor.output else { return }
         NSPasteboard.general.clearContents()
         copied = NSPasteboard.general.setString(output, forType: .string)
+        if copied { editor.recordTranslation() }
     }
     private var footer: some View {
         HStack(alignment: .top, spacing: 9) {
@@ -363,37 +384,6 @@ struct ContentView: View {
     }
     private func guideRow(_ title: String, _ value: String) -> some View {
         GridRow { Text(title); Text(value).font(.system(size: 12, design: .monospaced)) }
-    }
-    private var recent: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            HStack {
-                Text("Recent expressions").font(.system(size: 26, design: .serif))
-                Spacer(); Button("Done") { showingHistory = false }.keyboardShortcut(.cancelAction)
-            }
-            Text("Up to 20 saved expressions, stored on this Mac.").foregroundStyle(Palette.muted)
-            if editor.history.isEmpty {
-                ContentUnavailableView("A clean page", systemImage: "bookmark", description: Text("Use Save expression to keep a result here."))
-            } else {
-                ScrollView {
-                    VStack(spacing: 12) {
-                        ForEach(editor.history) { entry in
-                            HStack {
-                                Button {
-                                    editor.replace(entry.document); showingHistory = false; mathFocused = true
-                                } label: {
-                                    VStack(alignment: .leading, spacing: 7) {
-                                        Text(entry.output).font(.system(size: 14, design: .monospaced)).lineLimit(3)
-                                        Text(entry.date, format: .dateTime.month().day().hour().minute()).font(.system(size: 10)).foregroundStyle(Palette.muted)
-                                    }.frame(maxWidth: .infinity, alignment: .leading)
-                                        .contentShape(Rectangle())
-                                }.buttonStyle(.plain)
-                                Button { editor.deleteHistory(entry.id) } label: { Image(systemName: "trash") }.buttonStyle(.borderless).help("Remove saved expression")
-                            }.padding(16).background(.white, in: RoundedRectangle(cornerRadius: 10))
-                        }
-                    }
-                }
-            }
-        }.padding(30).frame(width: 640, height: 470).background(Palette.paper)
     }
 }
 

@@ -12,9 +12,9 @@ Open `WebWorKTranslate.xcodeproj` in Xcode, select the **WebWorKTranslate** sche
 - Fractions, powers, roots, absolute values, functions, and logarithms have individually editable slots. Click inside a slot to edit it.
 - `Tab` / `Shift-Tab` move between slots. Arrow keys move the cursor. `Escape`, `Return`, or `)` exit a template.
 - Fraction and power insertions wrap the preceding number or template. Use a parentheses template to group a larger base.
-- `⌘Z` undoes and `⇧⌘Z` redoes edits, including Clear and example loading.
+- `⌘Z` undoes and `⇧⌘Z` redoes edits, including Clear and reopening history.
 - `⌘V` replaces the expression with parsed plain math from the clipboard, such as `sqrt(x^2+1)`. Invalid paste leaves the draft intact. LaTeX paste is not supported.
-- **Copy** or `⇧⌘C` copies the WebWorK result. **Save expression** adds it to the recent list.
+- **Copy** or `⇧⌘C` copies the WebWorK result. Completed translations appear in the sidebar when you copy, save, clear, or switch expressions. Click any history row to reopen it; right-click to remove it. Repeated translations are moved to the top without duplicates.
 
 The draft and up to 20 saved expressions are stored locally in UserDefaults. No account, network service, or telemetry is used.
 
